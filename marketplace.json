@@ -1,7 +1,7 @@
 {
     "plugins": [
       {
-        "name": "my-first-plugin",
+        "name": "design-skills",
         "repo": "https://github.com/muthuveerapandi-s-2874/design-skills"
       }
     ]
