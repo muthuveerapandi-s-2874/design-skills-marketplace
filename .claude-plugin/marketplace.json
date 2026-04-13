@@ -7,8 +7,9 @@
     {
       "name": "design-skills",
       "source": {
-        "type": "github",
-        "repo": "muthuveerapandi-s-2874/design-skills"
+        "github": {
+          "repo": "muthuveerapandi-s-2874/design-skills"
+        }
       }
     }
   ]
