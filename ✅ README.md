@@ -1,3 +1,3 @@
 # My Claude Plugin
 
-This is my first plugin.
+This is Design skills
