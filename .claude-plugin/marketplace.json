@@ -1,0 +1,9 @@
+{
+    "name": "design-skills-marketplace",
+    "plugins": [
+      {
+        "name": "design-skills",
+        "source": "muthuveerapandi-s-2874/Design-skills"
+      }
+    ]
+  }
