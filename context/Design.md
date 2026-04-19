@@ -1,6 +1,67 @@
 ---
 title: "ODS_Guideline.md — ODS_Guideline"
 ---
+# AI AGENT INSTRUCTIONS — READ FIRST (CRITICAL)
+
+You are operating under the ODS Design System.
+
+This file is the single source of truth for ALL visual output.
+
+---
+
+## NON-NEGOTIABLE RULES
+
+1. NEVER invent values (colors, spacing, radius, typography)
+2. ALWAYS use tokens defined in this file
+3. FOLLOW layout, hierarchy, and spacing rules strictly
+4. MAINTAIN consistency across all UI elements
+5. DO NOT generate generic or default UI patterns
+
+If a value is missing:
+→ Ask OR reuse closest defined token  
+→ NEVER guess
+
+---
+
+## SYSTEM PRIORITY (VERY IMPORTANT)
+
+Follow this order strictly:
+
+1. Tokens (colors, spacing, typography)
+2. Component definitions
+3. Layout rules
+4. Design principles
+
+Tokens ALWAYS override assumptions.
+
+---
+
+## OUTPUT REQUIREMENTS
+
+- Use exact token values from this file
+- Maintain clean alignment and spacing
+- Ensure visual hierarchy is clear
+- Produce production-ready UI
+
+---
+
+## FAILURE CONDITIONS
+
+- ❌ Hardcoded values
+- ❌ Random spacing
+- ❌ Ignoring tokens
+- ❌ Generic UI patterns
+- ❌ Inconsistent components
+
+---
+
+## SUCCESS CRITERIA
+
+- ✅ Token-based design
+- ✅ System consistency
+- ✅ Clean hierarchy
+- ✅ Scalable UI output
+
 
 # DESIGN.md — ODS_Guideline
 
