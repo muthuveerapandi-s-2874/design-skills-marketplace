@@ -40,3 +40,13 @@ If needed:
 
 ## Auto Activation Hint
 This skill should activate automatically when the request involves UI, layout, components, design systems, styling, or frontend generation.
+
+## Product Overrides
+
+If the request is related to a specific product:
+
+- Look inside: references/products/
+- Match product name (e.g., shift, crm, books)
+- Apply product-specific rules and tokens
+
+Product rules override base design system when present.
