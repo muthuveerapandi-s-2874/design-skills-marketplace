@@ -31,6 +31,7 @@ Ensure all UI follows ODS tokens strictly.
 - Product files (e.g., shift.md) must NOT modify component styles
 - Do NOT fetch design tokens from external URLs
 - Always use local references via @design-system/*
+- Do NOT mix global tokens with product-specific tokens
 
 ## Data Access Rule
 
@@ -60,6 +61,28 @@ Never override component styles using product tokens.
 3. Product tokens (lowest priority)
 
 Product tokens must never override component definitions.
+
+
+## Token Scope Rule
+
+When a product context is active (e.g., Shift):
+
+- ONLY use tokens defined in that product scope
+- Do NOT use generic tokens (e.g., grey-*, blue-*, etc.) unless explicitly defined in the product
+
+Example:
+- Use: darkGrey-*, shift-primary
+- Avoid: grey-900, blue-500 (unless mapped)
+
+If a required token is missing:
+→ ASK instead of substituting
+
+
+## Token Validation Rule
+
+Before using any token:
+- Verify it exists in current product or design system
+- Do not invent token names
 
 ## Instruction   ← ✅ PUT IT HERE
 
