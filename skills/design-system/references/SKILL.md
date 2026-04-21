@@ -23,6 +23,28 @@ Ensure all UI follows ODS tokens strictly.
 - No custom styles
 - Follow component structure exactly
 - If missing → ASK
+- Components must strictly follow definitions from @design-system/components/*.json
+- Do NOT override component colors, sizes, variants, or states
+- Product files (e.g., shift.md) must NOT modify component styles
+- Components must strictly follow definitions from @design-system/components/*.json
+- Do NOT override component colors, sizes, variants, or states
+- Product files (e.g., shift.md) must NOT modify component styles
+
+## Component Authority Rule
+
+All UI components (e.g., Button, CTA, Input) must strictly follow definitions from:
+
+@design-system/components/*.json
+
+Never override component styles using product tokens.
+
+## Token Priority
+
+1. Component tokens (highest priority)
+2. Global tokens (@design-system/DESIGN.md)
+3. Product tokens (lowest priority)
+
+Product tokens must never override component definitions.
 
 ## Instruction   ← ✅ PUT IT HERE
 
