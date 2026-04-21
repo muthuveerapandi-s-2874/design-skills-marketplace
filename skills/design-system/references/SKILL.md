@@ -84,6 +84,39 @@ Before using any token:
 - Verify it exists in current product or design system
 - Do not invent token names
 
+
+
+## Component Isolation Rule
+
+Components must remain isolated from product themes.
+
+- CTA must use @design-system/components/cta.json only
+- Product tokens (shift.json) must NOT override component styles
+- Product tokens apply only to:
+  - backgrounds
+  - layout
+  - sections
+
+Example:
+- CTA → ODS blue (#0047FF)
+- Background → Shift darkGrey
+
+
+  ## Product Activation Rule
+
+When a product is specified (e.g., Shift):
+
+- Automatically load:
+  @design-system/themes/{product}.json
+
+- Apply tokens to:
+  - page background
+  - sections
+  - layout surfaces
+
+- Do NOT apply to:
+  - components (CTA, inputs, buttons)
+
 ## Instruction   ← ✅ PUT IT HERE
 
 Always follow the external design system:
