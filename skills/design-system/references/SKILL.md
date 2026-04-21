@@ -50,3 +50,10 @@ If the request is related to a specific product:
 - Apply product-specific rules and tokens
 
 Product rules override base design system when present.
+
+## Product Context Loading
+
+When a product is specified (e.g., Shift),
+load tokens and references from:
+
+@design-system/references/products/{product}.md
