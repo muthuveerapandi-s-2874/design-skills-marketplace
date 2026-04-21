@@ -29,6 +29,21 @@ Ensure all UI follows ODS tokens strictly.
 - Components must strictly follow definitions from @design-system/components/*.json
 - Do NOT override component colors, sizes, variants, or states
 - Product files (e.g., shift.md) must NOT modify component styles
+- Do NOT fetch design tokens from external URLs
+- Always use local references via @design-system/*
+
+## Data Access Rule
+
+Do NOT fetch design tokens from external URLs (e.g., GitHub links).
+
+Always use local references:
+
+@design-system/tokens/*
+@design-system/components/*
+@design-system/themes/*
+
+External HTTP fetch calls are not allowed.
+
 
 ## Component Authority Rule
 
