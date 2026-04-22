@@ -1,12 +1,16 @@
 ---
-title: "Shift Product Theme"
-purpose: "Product behavior and UI direction for Shift"
+title: "Shift Product Rules"
+purpose: "Product-level guardrails for Shift — token scope and component authority"
 ---
 
 # PRODUCT — Shift
 
-> This file defines the behavior and visual direction for the Shift product.
-> It extends the global ODS design system without overriding it.
+> Shift-specific guardrails that extend the global ODS design system.
+> This file defines **rules only** — what Shift is allowed to touch and
+> what it must not override.
+>
+> Aesthetic direction (composition, motion, feel, example layouts) lives
+> in the separate `shift-visual-language` skill.
 
 ---
 
@@ -16,33 +20,14 @@ Always load, in this order:
 
 1. `design-system/DESIGN.md` (from the submodule at repo root)
 2. `design-system/themes/shift.json` (Shift theme tokens)
-3. This file (Shift product behavior)
+3. This file (Shift product rules)
 
 ---
 
 ## Theme Identity
 
 - **Product:** Shift
-- **Mode:** Dark
-- **Tone:** Focused, minimal, productivity-driven
-- **Visual Style:** Clean, low-noise interface
-
----
-
-## UI Behavior
-
-- Prefer **dark backgrounds** and deep surfaces
-- Use the ODS **primary color for actions and highlights**
-- Maintain **high contrast for readability**
-- Reduce visual clutter and distractions
-
----
-
-## Layout Guidelines
-
-- Use spacious layouts with clear hierarchy
-- Prioritize content over decoration
-- Keep alignment strict and grid-based
+- **Mode:** Dark (product operates in a dark colour mode by default)
 
 ---
 
@@ -50,42 +35,32 @@ Always load, in this order:
 
 Shift is allowed to influence **only**:
 
-- Page and section backgrounds (Shift dark surfaces)
-- Layout density and spacing rhythm (within the ODS scale)
-- Ambient color treatment — tints and gradients at low opacity using
-  Shift theme tokens from `design-system/themes/shift.json`
+- Page and section backgrounds (Shift dark surfaces from `themes/shift.json`)
+- Layout density and spacing rhythm — within the ODS scale, no new values
+- Ambient colour treatment (tints and gradients at low opacity) using
+  tokens from `design-system/themes/shift.json`
 
 ---
 
 ## What Shift Does NOT Customize
 
-Shift must **not** override any component. All of the following come from
-`design-system/components/*.json` and are untouchable:
+Shift must **not** override any component. These come from
+`design-system/components/*.json` and are untouchable at the product level:
 
 - Buttons and CTAs
 - Inputs, selects, checkboxes, toggles
-- Cards (component-level; surface background may be set via layout)
+- Cards (the component itself; the surface *behind* a card may be Shift-themed)
 - Typography system (sizes, weights, line-heights, tracking)
 
 Component styles are controlled by the ODS design system alone.
 
 ---
 
-## Surface Treatment (Backgrounds Only)
+## Surface Tokens
 
-- Use the dark surface tokens defined in `themes/shift.json` (e.g.
-  `--shift-surface-800`, `--shift-surface-900` — use the actual token
-  names from the theme file).
-- Subtle elevation; avoid heavy shadows.
-- Corner radii always come from ODS radius tokens — never arbitrary.
-
----
-
-## Interaction Style
-
-- Smooth and minimal transitions
-- Avoid flashy animations
-- Focus on usability and speed
+- Surface and background colours must use tokens defined in
+  `design-system/themes/shift.json`.
+- Corner radii always come from ODS radius tokens — never arbitrary values.
 
 ---
 
@@ -95,11 +70,11 @@ When generating UI for Shift:
 
 1. Load global system rules from `design-system/DESIGN.md`.
 2. Load Shift theme tokens from `design-system/themes/shift.json`.
-3. Apply Shift-specific behavior from this file (backgrounds, layout,
-   ambient treatment only).
+3. Apply Shift-specific scope rules from this file (what may be themed).
 4. Use canonical components from `design-system/components/*.json` without
    modification.
-5. Maintain consistency across all components and surfaces.
+5. For visual direction (composition, motion, feel), consult the
+   `shift-visual-language` skill.
 
 ---
 
@@ -109,17 +84,6 @@ When generating UI for Shift:
 - Do **NOT** override component styles (buttons, inputs, cards, etc.)
 - Do **NOT** override the typography system
 - Do **NOT** introduce new spacing values
-- Do **NOT** hardcode colors
+- Do **NOT** hardcode colours
 
 If a required token or rule is missing → **ASK**, do not substitute.
-
----
-
-## Notes
-
-Shift UI should feel:
-
-- Calm
-- Focused
-- Professional
-- Distraction-free
