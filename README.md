@@ -2,7 +2,8 @@
 
 > Build better UI. Faster. With AI.
 
-An AI-powered **design intelligence layer** for Claude — enabling structured thinking, scalable systems, and consistent visual design across products.
+An AI-powered **design intelligence layer** for Claude — enabling structured
+thinking, scalable systems, and consistent visual design across products.
 
 ---
 
@@ -10,191 +11,159 @@ An AI-powered **design intelligence layer** for Claude — enabling structured t
 
 Design today is:
 
-* ❌ Inconsistent across teams
-* ❌ Hard to scale
-* ❌ Dependent on individual thinking
+- ❌ Inconsistent across teams
+- ❌ Hard to scale
+- ❌ Dependent on individual thinking
 
-**Design Skills Marketplace solves this by:**
-
-👉 Turning design expertise into reusable AI-powered skills
+**Design Skills Marketplace solves this by turning design expertise into
+reusable, AI-powered skills.**
 
 ---
 
 ## 🧠 What you get
 
-A modular set of AI skills that help you:
+A modular set of Claude skills that help you:
 
-* Think like a senior product designer
-* Build scalable design systems
-* Generate UI patterns and themes
-* Standardize design decisions across teams
+- Think like a senior product designer
+- Build scalable design systems
+- Generate UI patterns and themes
+- Standardize design decisions across teams
 
 ---
 
 ## 🎯 Core Skills
 
-### 🧩 UI Thinking
-
-Structure your UI decisions:
-
-* Problem → User → Layout → System
-* Reduce guesswork in design
-* Improve clarity and usability
-
----
-
-### 🎨 Design Language
-
-Create strong foundations:
-
-* Color systems
-* Typography scale
-* Spacing & layout rules
-* Token-ready structure
-
----
-
-### 🏗️ Theme Factory
-
-Generate visual systems instantly:
-
-* SaaS themes
-* Minimal UI systems
-* Zoho-style design patterns
-* Brand-aligned UI outputs
+| Folder | Skill name | What it does |
+|---|---|---|
+| `skills/ui-thinking/` | `ui-design-thinking` | Bold, intentional UI direction-setting — pick a design stance before building. |
+| `skills/design-lang/` | `ods-visual-language` | Apply Zoho's ODS visual language: composition, spacing, motion, palette, illustration. |
+| `skills/zoho-theme-factory/` | `zoho-theme-factory` | 15 ODS-compliant themes (5 Brand + 10 Creative) for HTML, PPTX, DOCX, banners. |
+| `skills/ods-design-system/` | `ods-design-system` | Enforces strict ODS token / component / theme usage from the local design system. |
 
 ---
 
 ## 🚀 Installation
 
-### 1. Add Marketplace
+### Option A — Claude Code plugin marketplace
 
-```bash id="u7zz2x"
+```text
 /plugin marketplace add muthuveerapandi-s-2874/design-skills-marketplace
-```
-
----
-
-### 2. Install Plugin
-
-```bash id="r0avcc"
 /plugin install design-skills
 ```
+
+### Option B — Clone directly
+
+The ODS design system lives in a **git submodule**, so recurse when cloning:
+
+```bash
+git clone --recurse-submodules https://github.com/muthuveerapandi-s-2874/design-skills-marketplace
+
+# or, if you already cloned without submodules:
+cd design-skills-marketplace
+git submodule update --init --recursive
+```
+
+If `design-system/` is empty after cloning, you forgot the submodule step
+— the `ods-design-system` skill depends on it.
 
 ---
 
 ## ⚙️ Usage
 
-Run skills directly inside Claude:
+These skills **auto-activate** based on how you describe your task. There are
+no slash commands — just describe what you want and Claude matches the right
+skill from its description.
 
-```bash id="m7o0fq"
-/ui-thinking
-/design-lang
-/theme
-```
+Example prompts that activate each skill:
+
+- `ui-design-thinking` → *"Help me pick a bold design direction for this landing page."*
+- `ods-visual-language` → *"Make this page feel premium and human using ODS."*
+- `zoho-theme-factory` → *"Apply a warm Zoho theme to this deck."*
+- `ods-design-system` → *"Build a dashboard UI using ODS tokens."*
 
 ---
 
 ## 🏗️ Architecture
 
-```id="t77yz7"
-.claude-plugin/
-  marketplace.json
-
-skills/
-  ui-thinking/
-    SKILL.md
-  design-lang/
-    SKILL.md
-  zoho-theme-factory/
-    SKILL.md
+```text
+design-skills-marketplace/
+├── .claude-plugin/
+│   └── marketplace.json          # Plugin manifest
+├── design-system/                # Git submodule → ODS--design-system
+│   ├── DESIGN.md
+│   ├── tokens/
+│   ├── components/
+│   ├── themes/
+│   └── references/products/
+├── skills/
+│   ├── ui-thinking/SKILL.md
+│   ├── design-lang/SKILL.md
+│   ├── zoho-theme-factory/SKILL.md
+│   └── ods-design-system/SKILL.md
+├── .gitignore
+├── .gitmodules
+├── LICENSE
+└── README.md
 ```
 
 ---
 
-## 💼 Real-world Use Cases
+## 💼 Real-world use cases
 
-### 🧑‍🎨 Designers
-
-* Structured UI thinking
-* Faster design decisions
-* Consistent system building
-
-### 📈 Marketers
-
-* Landing page clarity
-* Conversion-focused layouts
-* Messaging + design alignment
-
-### 🚀 Startups
-
-* Build design systems fast
-* Reduce dependency on large teams
-* Ship faster
-
-### 🏢 Teams (Zoho-style workflows)
-
-* Standardize design language
-* Align across products
-* Scale design operations
+**Designers** — structured UI thinking, faster decisions, consistent systems.
+**Marketers** — landing page clarity, conversion-focused layouts.
+**Startups** — build design systems fast, reduce reliance on large teams.
+**Teams (Zoho-style workflows)** — standardize design language across products.
 
 ---
 
 ## 🔥 Vision
 
-This is not just a plugin.
+This is a foundation for:
 
-It’s the foundation for:
-
-* 🧠 AI-powered design systems
-* 🏗️ Prompt-driven UI builders
-* 🔄 Design → Code automation
-* 🛡️ Brand consistency engines (BrandGuard)
+- 🧠 AI-powered design systems
+- 🏗️ Prompt-driven UI builders
+- 🔄 Design → Code automation
+- 🛡️ Brand consistency engines (BrandGuard)
 
 ---
 
 ## 🧩 Roadmap
 
-* ✅ Core design skills
-* 🔜 BrandGuard integration
-* 🔜 Figma → AI workflows
-* 🔜 Component generation engine
-* 🔜 Design QA automation
+- ✅ Core design skills
+- 🔜 BrandGuard integration
+- 🔜 Figma → AI workflows
+- 🔜 Component generation engine
+- 🔜 Design QA automation
 
 ---
 
 ## 👨‍💻 Creator
 
-**Muthu**
-Design × AI × Product Systems
-
-GitHub: https://github.com/muthuveerapandi-s-2874
+**Muthu** — Design × AI × Product Systems
+GitHub: <https://github.com/muthuveerapandi-s-2874>
 
 ---
 
 ## 🤝 Contribute
 
-Want to expand this system?
+Want to expand this system? You can add:
 
-You can add:
+- New design skills
+- UI frameworks
+- Design tokens
+- Automation workflows
 
-* New design skills
-* UI frameworks
-* Design tokens
-* Automation workflows
+See `CONTRIBUTING.md` (coming soon) for guidelines.
 
 ---
 
 ## ⭐ Support
 
-If this helps your workflow:
-
-👉 Star the repo
-👉 Share with your team
-👉 Build on top of it
+If this helps your workflow, ⭐ the repo and share it with your team.
 
 ---
 
 ## 📜 License
 
-MIT License
+MIT — see [LICENSE](./LICENSE).

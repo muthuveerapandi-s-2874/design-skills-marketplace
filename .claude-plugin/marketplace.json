@@ -12,14 +12,15 @@
   "plugins": [
     {
       "name": "design-skills",
-      "description": "UI thinking, design language, and theme generation skills",
+      "version": "1.0.0",
+      "description": "UI thinking, design language, and theme generation skills for Zoho ODS",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/ui-thinking",
         "./skills/design-lang",
         "./skills/zoho-theme-factory",
-        "./skills/design-system"
+        "./skills/ods-design-system"
       ]
     }
   ]
