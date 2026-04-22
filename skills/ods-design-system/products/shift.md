@@ -24,18 +24,11 @@ Always load, in this order:
 
 ---
 
-## Theme Identity
-
-- **Product:** Shift
-- **Mode:** Dark (product operates in a dark colour mode by default)
-
----
-
 ## What Shift Customizes
 
 Shift is allowed to influence **only**:
 
-- Page and section backgrounds (Shift dark surfaces from `themes/shift.json`)
+- Page and section backgrounds (Shift surfaces from `themes/shift.json`)
 - Layout density and spacing rhythm — within the ODS scale, no new values
 - Ambient colour treatment (tints and gradients at low opacity) using
   tokens from `design-system/themes/shift.json`
