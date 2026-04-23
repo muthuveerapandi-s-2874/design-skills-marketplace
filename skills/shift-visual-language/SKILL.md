@@ -790,13 +790,20 @@ If a component isn't listed, it's either an edge case (ask the designer) or it's
 ---
 ## 12. CTA
 
-**Use `design-system/components/cta.json` as-is.** This skill does not
-impose Shift-specific constraints on which variants, sizes, or states to
-use — the ODS CTA component is the source of truth.
+**All CTAs use `design-system/components/cta.json` as-is.** Colour, radius,
+size, border, typography, states — every property comes from the component
+spec. No overrides, no variants, no surface-based flipping.
 
-Hover and active states, variant colours, size definitions, border
-specs, focus/disabled states — all from `components/cta.json`. Do not
-redefine them here.
+- Do not change the CTA's background colour based on which section it's in.
+- Do not swap to white fill on primary banners.
+- Do not use Shift's `#3940D0` on CTA fills — the CTA primary fill is
+  whatever `cta.json` says.
+- `--primary` (Shift indigo, from §3) is for section backgrounds and
+  accents, **not** for CTAs.
+
+If a design calls for a button treatment `cta.json` doesn't support, the
+answer is to either pick a variant that does, or raise it with the ODS
+team — never fork the component here.
 
 ---
 ## 13. Structure Library
