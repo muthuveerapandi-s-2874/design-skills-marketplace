@@ -9,8 +9,8 @@ purpose: "Product-level guardrails for Shift — token scope and component autho
 > This file defines **rules only** — what Shift is allowed to touch and
 > what it must not override.
 >
-> Aesthetic direction (composition, motion, feel, example layouts) lives
-> in the separate `shift-visual-language` skill.
+> For visual direction (composition, motion, feel, example layouts,
+> marketing-website design), see the separate `shift-visual-language` skill.
 
 ---
 
@@ -38,9 +38,12 @@ Shift is allowed to influence **only**:
 ## What Shift Does NOT Customize
 
 Shift must **not** override any component. These come from
-`design-system/components/*.json` and are untouchable at the product level:
+`design-system/components/*.json` and are untouchable:
 
-- Buttons and CTAs
+- **CTAs and buttons** — use `components/cta.json` as-is. Primary fill,
+  hover, active, border, radius, size, typography, states all come from
+  the component spec. Shift's `#3940D0` primary colour is for section
+  backgrounds and accents, **never** for CTA fills.
 - Inputs, selects, checkboxes, toggles
 - Cards (the component itself; the surface *behind* a card may be Shift-themed)
 - Typography system (sizes, weights, line-heights, tracking)
@@ -51,7 +54,7 @@ Component styles are controlled by the ODS design system alone.
 
 ## Surface Tokens
 
-- Surface and background colours must use tokens defined in
+- Surface and background colours use tokens from
   `design-system/themes/shift.json`.
 - Corner radii always come from ODS radius tokens — never arbitrary values.
 
@@ -64,8 +67,9 @@ When generating UI for Shift:
 1. Load global system rules from `design-system/DESIGN.md`.
 2. Load Shift theme tokens from `design-system/themes/shift.json`.
 3. Apply Shift-specific scope rules from this file (what may be themed).
-4. Use canonical components from `design-system/components/*.json` without
-   modification.
+4. Use canonical components from `design-system/components/*.json`
+   **without modification**. CTAs, inputs, cards — all from the component
+   JSONs, no overrides.
 5. For visual direction (composition, motion, feel), consult the
    `shift-visual-language` skill.
 
@@ -74,7 +78,8 @@ When generating UI for Shift:
 ## Restrictions
 
 - Do **NOT** redefine tokens
-- Do **NOT** override component styles (buttons, inputs, cards, etc.)
+- Do **NOT** override component styles (buttons, CTAs, inputs, cards, etc.)
+- Do **NOT** change CTA colours based on surface or section
 - Do **NOT** override the typography system
 - Do **NOT** introduce new spacing values
 - Do **NOT** hardcode colours
