@@ -52,19 +52,10 @@ A modular set of Claude skills that help you:
 ```
 
 ### Option B — Clone directly
-
-The ODS design system lives in a **git submodule**, so recurse when cloning:
-
 ```bash
-git clone --recurse-submodules https://github.com/muthuveerapandi-s-2874/design-skills-marketplace
-
-# or, if you already cloned without submodules:
-cd design-skills-marketplace
-git submodule update --init --recursive
+git clone https://github.com/muthuveerapandi-s-2874/design-skills-marketplace
 ```
-
-If `design-system/` is empty after cloning, you forgot the submodule step
-— the `ods-design-system` skill depends on it.
+Everything you need — skills, ODS tokens, components, themes — is in this single repo. No submodule setup needed.
 
 ---
 
@@ -89,7 +80,7 @@ Example prompts that activate each skill:
 design-skills-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # Plugin manifest
-├── design-system/                # Git submodule → ODS--design-system
+├── design-system/                # ODS design system (tokens, components, themes)
 │   ├── DESIGN.md
 │   ├── tokens/
 │   ├── components/
