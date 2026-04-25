@@ -45,6 +45,50 @@ animation character, flowchart styles.
 
 ---
 
+## TOP RULES — read first, never forget
+
+These rules override every other section in this file. If anything below
+seems to contradict, **these win.**
+
+### Brand colour vs CTA colour — they are different
+
+- **`--brand` = `#3940D0`** (Shift indigo). Used for: section banners,
+  dark surfaces, links, accents, decorative elements.
+  **NEVER on a CTA fill, border, or text.**
+
+- **CTA colour = `#0047FF`** (ODS blue, from `cta.json`). Used for: every
+  primary CTA on every Shift page, on every surface.
+  **The CTA colour is the same on every Zoho product** — that's the
+  whole point of the shared component.
+
+### Hard rules
+
+1. **Every CTA variant** (primary, primaryLine, secondary, secondaryLine,
+   tertiary) **comes from `design-system/components/cta.json` as-is.**
+   Read the JSON; do not invent variants.
+
+2. **Primary CTA fill is `#0047FF`. Never `#3940D0`.** A line like
+   `.btn-primary { background: var(--primary) }` where `--primary` is
+   Shift indigo is a hard violation — use `cta.json`'s `colors.blue.500`
+   token (`#0047FF`) instead.
+
+3. **CTAs do not flip on banners or dark sections.** No `.btn--white`
+   variant on Shift-indigo banners. No surface-based recolouring. The
+   only documented exception is contrast failure on solid `#3940D0`
+   banners (see §6) — and the exception is to use `primaryLine` (white
+   border, white text), not to invert the primary fill.
+
+4. **Brand `#3940D0` lives on backgrounds, NEVER on CTAs.** Hero banners,
+   dark sections, accents — yes. Buttons — no.
+
+5. **Components do not have product-specific colour variants.** Every
+   Zoho product's CTA looks identical. Brand differentiation lives on
+   the surface, not on the button.
+
+If you remember nothing else from this file, remember rule 2.
+
+---
+
 ## 1. Visual Aesthetic & Creative
 
 **The feeling:** Warm and human — built for real teams. Scheduling is a messy, people-heavy problem (servers swapping Saturday night, a manager covering a call-out at 6am). The site should feel like it was made by someone who understands that — not a generic SaaS marketing machine.
@@ -140,7 +184,7 @@ use this tight four-surface subset:
 ### Hard rules
 
 1. **White is the default.** Every content section is white unless it's explicitly a banner or a dark section. No grey fills, no tints, no off-whites. When in doubt — white.
-2. **Primary `#3940D0` always appears at full saturation.** Never `rgba(57, 64, 208, 0.x)`. If a softer blue feel is needed, use the light gradient — not a dimmed primary.
+2. **Brand `#3940D0` always appears at full saturation** as a section background, banner, or accent. Never `rgba(57, 64, 208, 0.x)`. If a softer blue feel is needed, use the light gradient — not a dimmed brand colour. (This rule governs surfaces, not CTAs — CTAs come from `cta.json` per §12.)
 3. **Dark theme `#161B63` is solid only.** No gradient on dark. No pattern on dark. No image background on dark. Flat confident surface.
 4. **Minimum 2 dark-theme sections per page.** Not one, not zero. Two at least, placed between content beats (typical spots: after the opening deep-dives, and before the final CTA). If the content doesn't naturally fill two dark beats, write one — a manifesto statement, a stat strip, a customer quote, a logo band.
 5. **The light gradient is banner-only.** Not a section background, not a card fill, not a hover state. Banners can be either solid `#3940D0` *or* the light gradient — designer picks per page based on the page's tone. Never use both flavors on the same page.
@@ -1395,9 +1439,12 @@ This matches the restrained creative register (§2) — animation is a finishing
 
 ### Hover rules by component
 
-**Buttons (Primary / Secondary / Ghost)**
-- Arrow icon translates 4px to the right, 200ms ease (§12).
-- Background shifts slightly: primary `#3940D0 → #2C32A8`, secondary picks up a 6% primary tint fill, ghost gets an underline.
+**CTAs (all variants)**
+- Hover, active, focus, and disabled states are defined in
+  `design-system/components/cta.json` and shown in §12. Do not restate or
+  invent button hover colours here.
+- Arrow icon (when present in the label) translates 4px to the right,
+  200ms ease.
 - No Y-translate on buttons.
 
 **Cards (feature, pricing, content)**
