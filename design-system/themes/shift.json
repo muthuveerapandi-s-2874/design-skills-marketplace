@@ -5,7 +5,7 @@
     "source_file": "ODS_Guideline",
     "purpose": "AI-ready design system specification"
   },
-  "description": "Use only these values. Reference as CSS custom properties (var(--token-name)). Schema matches tokens/color/colors.json: top-level 'colors' → family (lowercase) → shade (50–950).",
+  "description": "Use only these values. Reference as CSS custom properties (var(--token-name)). Schema matches tokens/color/colors.json: top-level 'colors' \u2192 family (lowercase) \u2192 shade (50\u2013950).",
   "colors": {
     "primary": {
       "50": "#EEF0FB",
@@ -95,7 +95,6 @@
       "600": "#1A53BA",
       "700": "#144294",
       "800": "#0D306E",
-      "850": "#1B3D8C",
       "900": "#071D44",
       "950": "#030F24"
     },
