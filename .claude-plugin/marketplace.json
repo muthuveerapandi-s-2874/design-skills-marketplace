@@ -6,22 +6,19 @@
   },
   "metadata": {
     "description": "AI-powered design skills for UI, systems, and themes",
-    "version": "1.7.0",
+    "version": "1.8.0",
     "repository": "https://github.com/muthuveerapandi-s-2874/design-skills-marketplace"
   },
   "plugins": [
     {
       "name": "design-skills",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "description": "UI thinking, design language, theme generation, product visual languages, and section-by-section page building for Zoho ODS",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/ui-thinking",
-        "./skills/design-lang",
         "./skills/zoho-theme-factory",
         "./skills/ods-design-system",
-        "./skills/shift-visual-language",
         "./skills/ods-page-builder"
       ]
     }
