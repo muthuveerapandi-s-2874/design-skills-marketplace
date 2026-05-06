@@ -17,9 +17,9 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/zoho-theme-factory",
-        "./skills/ods-design-system",
-        "./skills/ods-page-builder"
+        "./skills/zoho-theme-factorys",
+        "./skills/ods-design-systems",
+        "./skills/ods-page-builders"
       ]
     }
   ]
